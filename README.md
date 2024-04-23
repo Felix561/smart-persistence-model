@@ -1,30 +1,27 @@
-# Smart Persistence Model (SPM) Implementation
+# Smart Persistence Model Implementation
 
-## Goal:
+## Goal
 The goal of this repository is to provide an easy and standardized Python implementation of the Smart Persistence Model (SPM) to serve as a benchmark model for short-term PV power forecasting. The SPM is one of the most commonly used reference models in short-term PV power forecast research [1]-[4]. My implementation aims to standardize the benchmarking of forecast models in this field as I couldn't find an easy implementation on GitHub so far.
 
-## About the Smart Persistence Model:
-The Smart Persistence Model is the most commonly used reference model in solar forecasting. It assumes that the relative output, measured as the ratio of the actual PV output to the theoretical PV output under clear sky conditions, remains unchanged for the forecast horizon (denoted as T):
+## About the Smart Persistence Model
+*The information provided in this section is sourced from [1].*
 
-\[
-k_{clr} = \frac{{P(t + T)}}{{P_{clr}(t + T)}} = \frac{{P(t)}}{{P_{clr}(t)}}
-\]
+The Smart Persistence Model assumes that the relative output, measured as the ratio of the actual PV output to the theoretical PV output under clear sky conditions, remains unchanged for the forecast horizon (denoted as T):
+
+![Clear Sky Index](images/CSI.png)
 
 where \( k_{clr} \) represents the relative output, or formally named as the clear sky index, \( P \) is the actual PV output, and \( P_{clr} \) is the theoretical PV output.
 
 At any given time stamp, \( P_{clr} \) can be estimated by a clear sky model based on sun angles and PV panel orientations [5]:
 
-\[
-P_{clr}(t) = I_m A_e \left\{ \cos \epsilon \cos \chi(t) + \sin \epsilon \sin \chi(t) \cos[\xi(t) - \zeta] \right\}
-\]
+![P_clr](images/P_clr.png)
 
 Where \( I_m \) is the maximum solar irradiance; \( A_e \) is the effective PV panel area, which can be obtained from a least square fit with the real panel output of 12 clear sky days (details can be found in the study by Sun [4]); \( \epsilon \) and \( \zeta \) are elevation and azimuth angles of the solar PV arrays; \( \chi(t) \) and \( \xi(t) \) are the zenith and azimuth angle of the sun, which can be estimated for any minute of the year from the empirical functions provided in the textbook by da Rosa [5]. Alternatively, the zenith and azimuth angles can be estimated using the NREL SPA algorithm [6], which can be implemented in Python using the pvlib library [7].
 
 Based on Equation 2, the T-minute-ahead PV output can be estimated by the Smart Persistence Model as:
 
-\[
-\hat{P}(t + T) = \frac{{P(t)}}{{P_{clr}(t)}} \times P_{clr}(t + T)
-\]
+![SPM Prediction](images/SPM_pred.png)
+
 
 ## References:
 1. Yuhao Nie, "Short-term solar forecasting from all-sky images using deep learning," Stanford University Libraries, 2023. Available at: [https://purl.stanford.edu/bm790hj4850](https://purl.stanford.edu/bm790hj4850).
