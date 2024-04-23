@@ -10,7 +10,7 @@ The Smart Persistence Model assumes that the relative output, measured as the ra
 
 ![Clear Sky Index](images/CSI.PNG)
 
-where \( k_{clr} \) represents the relative output, or formally named as the clear sky index, \( P \) is the actual PV output, and \( P_{clr} \) is the theoretical PV output.
+where \( CSI \) represents the relative output, or formally named as the clear sky index, \( P \) is the actual PV output, and \( P_{clr} \) is the theoretical PV output.
 
 At any given time stamp, \( P_{clr} \) can be estimated by a clear sky model based on sun angles and PV panel orientations [5]:
 
