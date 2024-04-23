@@ -8,19 +8,19 @@ The goal of this repository is to provide an easy and standardized Python implem
 
 The Smart Persistence Model assumes that the relative output, measured as the ratio of the actual PV output to the theoretical PV output under clear sky conditions, remains unchanged for the forecast horizon (denoted as T):
 
-![Clear Sky Index](images/CSI.png)
+![Clear Sky Index](images/CSI.PNG)
 
 where \( k_{clr} \) represents the relative output, or formally named as the clear sky index, \( P \) is the actual PV output, and \( P_{clr} \) is the theoretical PV output.
 
 At any given time stamp, \( P_{clr} \) can be estimated by a clear sky model based on sun angles and PV panel orientations [5]:
 
-![P_clr](images/P_clr.png)
+![P_clr](images/P_ctl.PNG)
 
 Where \( I_m \) is the maximum solar irradiance; \( A_e \) is the effective PV panel area, which can be obtained from a least square fit with the real panel output of 12 clear sky days (details can be found in the study by Sun [4]); \( \epsilon \) and \( \zeta \) are elevation and azimuth angles of the solar PV arrays; \( \chi(t) \) and \( \xi(t) \) are the zenith and azimuth angle of the sun, which can be estimated for any minute of the year from the empirical functions provided in the textbook by da Rosa [5]. Alternatively, the zenith and azimuth angles can be estimated using the NREL SPA algorithm [6], which can be implemented in Python using the pvlib library [7].
 
 Based on Equation 2, the T-minute-ahead PV output can be estimated by the Smart Persistence Model as:
 
-![SPM Prediction](images/SPM_pred.png)
+![SPM Prediction](images/SPM_pred.PNG)
 
 
 ## References:
