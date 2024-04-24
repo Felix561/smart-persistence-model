@@ -33,3 +33,8 @@ Based on Equation 2, the T-minute-ahead PV output can be estimated by the Smart 
 5. Aldo da Rosa. *Fundamentals of Renewable Energy Processes.* 2009. ISBN 9780123746399. doi: [10.1016/B978-0-12-374639-9.X0001-2](https://doi.org/10.1016/B978-0-12-374639-9.X0001-2).
 6. Reda, I., & Andreas, A. Solar Position Algorithm for Solar Radiation Applications (Revised). United States: N. p., 2008. doi: [10.2172/15003974](https://doi.org/10.2172/15003974).
 7. W. F. Holmgren, C. W. Hansen, & M. A. Mikofski, “pvlib python: a python package for modeling solar energy systems,” Journal of Open Source Software, Jg. 3, Nr. 29, S. 884, 2018. doi: [10.21105/joss.00884](https://doi.org/10.21105/joss.00884).
+
+
+---
+
+**Disclaimer:** The code provided in this repository may contain errors, and no guarantee is provided for its accuracy or fitness for any particular purpose. If you encounter any issues or have any questions, feel free to contact me.
