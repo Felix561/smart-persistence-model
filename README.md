@@ -5,6 +5,10 @@
 ## Goal
 The goal of this repository is to provide an easy and standardized **Python** implementation of the **Smart Persistence Model** (SPM) to serve as a benchmark model for **short-term PV power forecasting**. The SPM is one of the most commonly used reference models in short-term PV power forecast research [1]-[4]. My implementation aims to standardize the benchmarking of forecast models in this field as I couldn't find an easy implementation on GitHub so far.
 
+
+**Note:** The Jupyter Notebook provides explanations and showcases two different implementations. However, in the .py file, only the Variant 1 implementation is provided for quick and easy use.
+
+
 ## About the Smart Persistence Model
 *The information provided in this section is sourced from [1].*
 
