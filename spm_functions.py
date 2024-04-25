@@ -15,6 +15,8 @@ Description: This module contains various function definitions for the Data prep
 
 import numpy as np
 import pandas as pd
+# Installing pvlib
+#!pip install pvlib
 import pvlib
 
 
@@ -55,7 +57,8 @@ def smart_persistence_pv_forecast(labels: np.ndarray, datetime_labels: list, par
             'panel_elevation': 22.5,
             'panel_azimuth': 195,
             'max_solar_irradiance': 1000,
-            'time_delta': 15
+            'time_delta': 15,
+            'effective_panel_area': 24.9842,
         }
 
     smart_predictions = _calculate_predictions(labels, datetime_labels, parameters)
