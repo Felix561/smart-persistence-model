@@ -153,6 +153,22 @@ def spm_pv_forecast_v2(labels: np.ndarray, datetime_labels: list, parameters: di
     labels (numpy.ndarray): Array of labels representing PV outputs.
     datetime_labels (list): List of datetime objects representing timestamps.
     parameters (dict, optional): Dictionary of parameters. Defaults to None.
+        If None, default parameters will be used.
+
+        The `parameters` dictionary should contain the following keys:
+
+        - 'latitude' (float): Latitude of the location in decimal degrees.
+        - 'longitude' (float): Longitude of the location in decimal degrees.
+        - 'altitude' (int): Altitude of the location in meters.
+        - 'panel_elevation' (float): Elevation angle of the solar PV arrays in degrees.
+        - 'panel_azimuth' (float): Azimuth angle of the solar PV arrays in degrees.
+        - 'max_solar_irradiance' (int): Maximum solar irradiance in W/m^2.
+        - 'time_delta' (int): Forecast horizon in minutes.
+        - 'time_zone_center_longitude': time zone correction, for your time zone, behind or before UTC (Coordinated Universal Time) in deggrees.
+
+        If no parameters are provided, default parameters from the SKIPP'D Benchmark Dataset will be used,
+        corresponding to the PV installation at Stanford University.
+
 
     Returns:
     numpy.ndarray: Array of per_predictions.
@@ -169,7 +185,7 @@ def spm_pv_forecast_v2(labels: np.ndarray, datetime_labels: list, parameters: di
             'max_solar_irradiance': 1000,           # Maximum solar irradiance in W/m^2
             'effective_panel_area': 24.98,          # Effective PV panel area in square meters
             'time_delta': 15,                       # forecast horizon in minutes
-            'time_zone_center_longitude': -120      # time zone correction, for your time zone, behind or before UTC (Coordinated Universal Time).
+            'time_zone_center_longitude': -120      # time zone correction, for your time zone, behind or before UTC (Coordinated Universal Time) in deggrees.
         }
 
     ntimes = len(datetime_labels)
