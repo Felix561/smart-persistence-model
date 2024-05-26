@@ -40,7 +40,7 @@ import time
 
 # My own SPM implementation:
 
-def spm_pv_forecast_v1(labels: np.ndarray, datetime_labels: list, parameters: dict = None) -> list:
+def spm_pv_forecast_v1(labels: np.ndarray, datetime_labels: list, parameters: dict = None) -> np.array:
     """
     Implementation of Version 1.
     Calculates the Smart Persistence Predictions for given labels and timestamps.
@@ -83,6 +83,7 @@ def spm_pv_forecast_v1(labels: np.ndarray, datetime_labels: list, parameters: di
         }
 
     smart_predictions = _calculate_predictions(labels, datetime_labels, parameters)
+    smart_predictions = np.array(smart_predictions)
     return smart_predictions
 
 
